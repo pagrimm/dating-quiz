@@ -9,7 +9,41 @@
   <script src="js/scripts.js"></script>
   <title>Document</title>
 </head>
-<body>
-  
+<body class="container">
+  <form id="datingquiz">
+    <h3>Gender?</h3>
+    <div class="radio">
+      <label>
+        <input type="radio" name="flavor" value="male" checked>
+        Male
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="flavor" value="female">
+        Female
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="flavor" value="other">
+        Other
+      </label>
+    </div>
+    <h3>Favorite type of media?</h3>
+    <select class="form-control" id="favorite-media">
+      <option>Movies</option>
+      <option>Music</option>
+      <option>Television</option>
+    </select>
+    <br>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <div id="celeb1">Celeb 1 - male - movies</div>
+  <div id="celeb2">Celeb 2 - female - movies</div>
+  <div id="celeb3">Celeb 3 - male - music</div>
+  <div id="celeb4">Celeb 4 - female - music</div>
+  <div id="celeb5">Celeb 5 - male - television</div>
+  <div id="celeb6">Celeb 6 - female - television</div>
 </body>
 </html>
