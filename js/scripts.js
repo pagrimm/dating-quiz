@@ -3,6 +3,7 @@ $(document).ready(function() {
     const favmedia = $("select#favorite-media").val();
     const gender = $("input:radio[name=gender]:checked").val();
     const name = $("input#name").val()
+    $("div.response").hide();
     
     if(name === ""){
         $("p#name-error").removeClass("hidden");
@@ -20,7 +21,6 @@ $(document).ready(function() {
       $("#celeb1").show();
     }
     else if (gender === 'other' && favmedia === 'Movies') {
-      $("#celeb1").show();
       $("#celeb2").show();
     }
 
