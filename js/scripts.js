@@ -2,7 +2,17 @@ $(document).ready(function() {
   $("form#datingquiz").submit(function(event) {
     const favmedia = $("select#favorite-media").val();
     const gender = $("input:radio[name=gender]:checked").val();
-
+    const name = $("input#name").val()
+    
+    if(name === ""){
+        $("p#name-error").removeClass("hidden");
+        $("p#name-error").addClass("error");
+      } 
+    else{
+        $("p#name-error").removeClass("error");
+        $("p#name-error").addClass("hidden");
+      }
+    
     if (gender === 'male' && favmedia === 'Movies') {
       $("#celeb2").show();
     }
@@ -33,9 +43,7 @@ $(document).ready(function() {
     else if (gender === 'other' && favmedia === 'Television') {
       $('#celeb6').show();
     }
-    else if ($('#name').val().length() === 0) {
-      $("input#name").append("<p>Please enter your name.</p>")
-    }
+    
     event.preventDefault();
   });
 });
