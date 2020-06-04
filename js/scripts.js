@@ -1,42 +1,41 @@
 $(document).ready(function() {
-  $("form#celebrityquiz").submit(function(event) {
-    const gender = $("input#gender").val()
-//if they select male- then _____ if they select female then ____
-    if (gender === 'male' && favmedia === 'movies') {
+  $("form#datingquiz").submit(function(event) {
+    const favmedia = $("select#favorite-media").val();
+    const gender = $("input:radio[name=gender]:checked").val();
+
+    if (gender === 'male' && favmedia === 'Movies') {
       $("#celeb2").show();
     }
-    if (gender === 'female' && favmedia === 'movies'){
+    else if (gender === 'female' && favmedia === 'Movies') {
       $("#celeb1").show();
     }
-    if (gender === 'other' && favmedia === 'movies'){
+    else if (gender === 'other' && favmedia === 'Movies') {
       $("#celeb1").show();
       $("#celeb2").show();
     }
 
-    if (gender === 'male' && favmedia === 'music'){
+    else if (gender === 'male' && favmedia === 'Music') {
       $("#celeb4").show();
     }
-    if (gender === 'female' && favmedia === 'music'){
+    else if (gender === 'female' && favmedia === 'Music') {
       $("#celeb3").show();
     }
-    if (gender === 'other' && favmedia === 'music'){
+    else if (gender === 'other' && favmedia === 'Music') {
       $("#celeb1").show();
     }
 
-    if (gender === 'male' && favmedia === 'television'){
+    else if (gender === 'male' && favmedia === 'Television') {
       $('celeb4').show();
     }
-    if (gender === 'female' && favmedia === 'television'){
+    else if (gender === 'female' && favmedia === 'Television') {
       $('#celeb5').show();
     }
-    if (gender === 'other' && favmedia === 'television'){
+    else if (gender === 'other' && favmedia === 'Television') {
       $('#celeb6').show();
     }
-    else {
-      
+    else if ($('#name').val().length() === 0) {
+      $("input#name").append("<p>Please enter your name.</p>")
     }
-    //if $(#name).val()
-
-    //
-
+    event.preventDefault();
+  });
 });
